@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+    <div class="container">
+        <br><br>
+        <h1 class="title">Endpoints/Reference</h1>
+        <p class="is-black">All requests are sent by a POST request. GET requests are not used and will result in a 403 Forbidden error. Simply type after the url /user/yourusernamehere and parse the JSON.</p>
+        <hr>
+        <div class="card has-background-grey-lighter">
+            <a class="card-header is-size-3">/user/< username ></username></a>
+            <div class="card-content">
+                Returns all data about a user. Includes posts, repls, upvotes, upvotes on the repls, etc.
+            </div>
+        </div>
+        <hr>
+        <div class="card has-background-grey-lighter">
+            <a class='card-header is-size-3'>/board/share</a>
+            <div class="card-content">
+                Returns data from the specified board. "share" can be replaced with "ask" or "all" for different boards.
+            </div>
+        </div>
+        <div class="card has-background-grey-lighter"></div>
+    </div>
+{% endblock %}
