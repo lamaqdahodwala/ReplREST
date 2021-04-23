@@ -7,9 +7,9 @@ headers = {
 
 def getuserbody(username):
     return {
-        "query": f'query UserData {{ userByUsername(username:"{username}"){{ karma, bio, posts {{ items {{ title, repl {{ language }} }} }} }} }}'
+        "query": f'query UserData {{ userByUsername(username:"{username}"){{ karma, bio, posts {{ items {{ title, repl {{ language }}, board {{ slug }} }} }} }} }}'
     }
 
 def sendreq(body):
     x = requests.post(url=url, data=body, headers=headers)
-    return x
+    return x.json()['data']['userByUsername']

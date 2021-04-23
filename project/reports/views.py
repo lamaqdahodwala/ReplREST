@@ -6,4 +6,4 @@ def index(req):
     if req.method == "POST":
         ... 
     else:
-        render(req, 'index.html')
+        return render(req, 'reports.html')
