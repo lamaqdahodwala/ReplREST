@@ -13,6 +13,13 @@ class BaseView(View):
 class UserView(BaseView):
     def get(self, req, username):
         body = assets.getuserbody(username)
-        x = assets.sendreq(body)
+        x = assets.sendrequser(body)
+        data = json.loads(x.text)
+        return HttpResponse(str(data))
+
+class BoardView(BaseView):
+    def get(self, req, boardname):
+        body = assets.getboardbody(boardname)
+        x = assets.sendreqboard(body)
         data = json.loads(x.text)
         return HttpResponse(str(data))
