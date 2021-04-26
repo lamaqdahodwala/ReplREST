@@ -7,7 +7,7 @@ headers = {
 
 def getuserbody(username):
     return {
-        "query": f'query UserData {{ userByUsername(username:"{username}"){{ karma, bio, posts {{ items {{ title, url, repl {{ language }}, board {{ slug }} }} }}, publicRepls{{ items{{ }}}} }} }}'
+        "query": f'query UserData {{ userByUsername(username:"{username}"){{ karma, bio, posts {{ items {{ title, url, repl {{ language }}, board {{ slug }} }} }}, publicRepls(showUnnamed:true){{ items{{ title, url, language }}}} }} }}'
     }
 
 def getboardbody(slug):
@@ -19,7 +19,7 @@ def getboardbody(slug):
 
 def sendrequser(body):
     x = requests.post(url=url, data=body, headers=headers)
-    return x.json()['data']['userByUsername']
+    return x.json() # ['data']['userByUsername']
 
 def sendreqboard(body):
     x = requests.post(url=url, data=body, headers=headers)

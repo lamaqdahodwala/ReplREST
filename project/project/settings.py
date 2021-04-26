@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-075=&s0k8tl_@s)l2$1sv(hh+dpanzw)sps9arabo=1w)8o67m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'home.apps.HomeConfig',
-    'reports.apps.ReportsConfig',
     'corsheaders'
 ]
 
